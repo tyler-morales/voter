@@ -1,11 +1,13 @@
 <template>
   <section class="canidates">
-    <Vote
-      v-for="canidate in sortedCanidates"
-      :key="canidate.id"
-      :canidate="canidate"
-      @click="upVote(canidate.id)"
-    />
+    <transition-group name="flip-list" class="canidates">
+      <Vote
+        v-for="canidate in sortedCanidates"
+        :key="canidate.id"
+        :canidate="canidate"
+        @click="upVote(canidate.id)"
+      />
+    </transition-group>
   </section>
 </template>
 
@@ -30,5 +32,9 @@ export default {
   display: flex;
   gap: 30px;
   justify-content: center;
+}
+
+.flip-list-move {
+  transition: transform 1s;
 }
 </style>
