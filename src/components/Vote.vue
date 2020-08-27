@@ -5,7 +5,7 @@
       <h3 class="name">{{ canidate.name }}</h3>
       <p class="title">{{ canidate.title }}</p>
       <button class="cast-vote" @click="upVote">
-        <Roller :text="canidate.votes"></Roller>
+        <Roller :text="String(canidate.votes)"></Roller>
       </button>
     </div>
   </div>
