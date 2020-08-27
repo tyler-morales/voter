@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <h1>The 2020 Election</h1>
-    <VoteList :canidates="canidates" :sortedCanidates="sortedCanidates" />
+    <VoteList :sortedCanidates="sortedCanidates" />
   </div>
 </template>
 

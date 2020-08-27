@@ -17,10 +17,6 @@ export default {
     Vote
   },
   props: {
-    canidates: {
-      type: Array,
-      required: true
-    },
     sortedCanidates: {
       type: Array,
       required: true

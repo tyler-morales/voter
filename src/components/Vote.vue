@@ -25,4 +25,16 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+button {
+  cursor: pointer;
+  background: rgb(218, 218, 255);
+  color: blue;
+  outline: none;
+  border: none;
+  font-size: 18px;
+  padding: 8px 15px;
+  border-radius: 10px;
+  width: 50px;
+}
+</style>
