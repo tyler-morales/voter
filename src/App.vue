@@ -1,6 +1,33 @@
 <template>
   <div id="app">
-    <h1>The 2020 Election</h1>
+    <header>
+      <div>
+        <iframe
+          src="https://giphy.com/embed/f2Xvlh0MivT20"
+          width="100%"
+          height="auto"
+          frameBorder="0"
+          class="giphy-embed"
+        ></iframe>
+      </div>
+      <h1>The 2020 Election</h1>
+      <div>
+        <iframe
+          src="https://giphy.com/embed/lQ6KHKqQaPrx7CBhPD"
+          width="100%"
+          height="auto"
+          frameBorder="0"
+          class="giphy-embed"
+        ></iframe>
+      </div>
+      <p>
+        <a
+          href="https://giphy.com/gifs/election-voting-election2020-lQ6KHKqQaPrx7CBhPD"
+          >via GIPHY</a
+        >
+      </p>
+    </header>
+
     <VoteList :sortedCanidates="sortedCanidates" />
   </div>
 </template>
@@ -24,8 +51,8 @@ export default {
         },
         {
           id: 2,
-          name: 'Gumpy',
-          title: 'Humanoid',
+          name: 'Spyler',
+          title: 'Household Items',
           img: require('@/assets/skyler.jpg'),
           votes: 5
         }
@@ -46,6 +73,8 @@ export default {
 <style lang="scss">
 body {
   background-image: url('./assets/bg.jpg');
+  margin: 0;
+  padding: 0;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -54,5 +83,23 @@ body {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+
+  header {
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+  }
+  h1 {
+    color: white;
+    background-color: red;
+    padding: 8px 15px;
+    align-self: center;
+    background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(228, 125, 125, 1) 51%,
+      rgba(0, 16, 255, 1) 100%
+    );
+  }
 }
 </style>
