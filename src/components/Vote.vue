@@ -4,13 +4,19 @@
       <img :src="canidate.img" alt="" />
       <h3 class="name">{{ canidate.name }}</h3>
       <p class="title">{{ canidate.title }}</p>
-      <button class="cast-vote" @click="upVote">{{ canidate.votes }}</button>
+      <button class="cast-vote" @click="upVote">
+        <Roller :text="canidate.votes"></Roller>
+      </button>
     </div>
   </div>
 </template>
 
 <script>
+import Roller from 'vue-roller'
 export default {
+  components: {
+    Roller
+  },
   props: {
     canidate: {
       type: Object,
@@ -39,6 +45,5 @@ button {
   font-size: 18px;
   padding: 8px 15px;
   border-radius: 10px;
-  width: 50px;
 }
 </style>
