@@ -44,6 +44,9 @@ export default {
 </script>
 
 <style lang="scss">
+body {
+  background-image: url('./assets/bg.jpg');
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

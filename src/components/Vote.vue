@@ -26,6 +26,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.card {
+  background: #fff;
+  padding: 0 0 20px 0;
+}
 button {
   cursor: pointer;
   background: rgb(218, 218, 255);
