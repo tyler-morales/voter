@@ -1,11 +1,45 @@
 <template>
-  <div id="app"></div>
+  <div id="app">
+    <h1>The 2020 Election</h1>
+    <VoteList :canidates="canidates" :sortedCanidates="sortedCanidates" />
+  </div>
 </template>
 
 <script>
+import VoteList from '@/components/VoteList'
 export default {
   name: 'App',
-  components: {}
+  components: {
+    VoteList
+  },
+  data() {
+    return {
+      canidates: [
+        {
+          id: 1,
+          name: 'Pingu',
+          title: 'Penguin',
+          img: require('@/assets/pingu.jpg'),
+          votes: 3
+        },
+        {
+          id: 2,
+          name: 'Gumpy',
+          title: 'Humanoid',
+          img: require('@/assets/skyler.jpg'),
+          votes: 5
+        }
+      ]
+    }
+  },
+  computed: {
+    sortedCanidates() {
+      let sortCanidates = this.canidates
+      return sortCanidates.sort((a, b) => {
+        return b.votes - a.votes
+      })
+    }
+  }
 }
 </script>
 
