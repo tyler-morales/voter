@@ -34,6 +34,8 @@
 
 <script>
 import VoteList from '@/components/VoteList'
+// import db from './firebaseInit'
+
 export default {
   name: 'App',
   components: {

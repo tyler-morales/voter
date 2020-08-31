@@ -13,6 +13,8 @@
 
 <script>
 import Roller from 'vue-roller'
+// import { db, fv } from './firebaseInit'
+
 export default {
   components: {
     Roller
