@@ -3,9 +3,8 @@
     <transition-group name="flip-list" class="canidates">
       <Vote
         v-for="canidate in sortedCanidates"
-        :key="canidate.id"
+        :key="canidate.doc"
         :canidate="canidate"
-        @click="upVote(canidate.id)"
       />
     </transition-group>
   </section>

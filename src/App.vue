@@ -45,7 +45,6 @@ export default {
     return {
       canidates: [
         {
-          id: 1,
           name: 'Pingu',
           title: 'Penguin',
           img: require('@/assets/pingu.jpg'),
@@ -53,7 +52,6 @@ export default {
           doc: 'NFwkv07uc2NEi6STR5LD'
         },
         {
-          id: 2,
           name: 'Spyler',
           title: 'Household Items',
           img: require('@/assets/skyler.jpg'),
