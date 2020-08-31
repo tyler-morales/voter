@@ -34,7 +34,7 @@
 
 <script>
 import VoteList from '@/components/VoteList'
-// import db from './firebaseInit'
+import db from './firebaseInit'
 
 export default {
   name: 'App',
@@ -49,17 +49,35 @@ export default {
           name: 'Pingu',
           title: 'Penguin',
           img: require('@/assets/pingu.jpg'),
-          votes: 3
+          votes: 0
         },
         {
           id: 2,
           name: 'Spyler',
           title: 'Household Items',
           img: require('@/assets/skyler.jpg'),
-          votes: 5
+          votes: 0
         }
       ]
     }
+  },
+  mounted() {
+    db.collection('canidates')
+      .get()
+      .then(query => {
+        query.forEach(doc => {
+          const dbCanidate = {
+            name: doc.data().name,
+            vote: doc.data().votes
+          }
+          const found = this.canidates.find(
+            element => element.name == dbCanidate.name
+          )
+          // if (found) {
+          found.votes = dbCanidate.vote
+          // }
+        })
+      })
   },
   computed: {
     sortedCanidates() {
