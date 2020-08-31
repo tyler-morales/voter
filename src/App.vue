@@ -49,33 +49,38 @@ export default {
           name: 'Pingu',
           title: 'Penguin',
           img: require('@/assets/pingu.jpg'),
-          votes: 0
+          votes: 0,
+          doc: 'NFwkv07uc2NEi6STR5LD'
         },
         {
           id: 2,
           name: 'Spyler',
           title: 'Household Items',
           img: require('@/assets/skyler.jpg'),
-          votes: 0
+          votes: 0,
+          doc: 'ctH9ZSQUKakF5ClLP7KR'
         }
       ]
     }
   },
   mounted() {
+    // synch browser with db
     db.collection('canidates')
       .get()
       .then(query => {
+        // get the name and # of votes for each canidate
         query.forEach(doc => {
           const dbCanidate = {
             name: doc.data().name,
             vote: doc.data().votes
           }
-          const found = this.canidates.find(
+          // lookup the canidate that matches the name in the db
+          const foundCanidate = this.canidates.find(
             element => element.name == dbCanidate.name
           )
-          // if (found) {
-          found.votes = dbCanidate.vote
-          // }
+
+          // update the correct # of votes for each canidate
+          foundCanidate.votes = dbCanidate.vote
         })
       })
   },

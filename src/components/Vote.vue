@@ -4,7 +4,7 @@
       <img :src="canidate.img" alt="" />
       <h3 class="name">{{ canidate.name }}</h3>
       <p class="title">{{ canidate.title }}</p>
-      <button class="cast-vote" @click="upVote">
+      <button class="cast-vote" @click="upVote(canidate.doc)">
         <Roller :text="String(canidate.votes)"></Roller>
       </button>
     </div>
@@ -13,7 +13,7 @@
 
 <script>
 import Roller from 'vue-roller'
-// import { db, fv } from './firebaseInit'
+import { db, fv } from '../firebaseInit'
 
 export default {
   components: {
@@ -26,7 +26,16 @@ export default {
     }
   },
   methods: {
-    upVote() {
+    upVote(doc) {
+      const increment = fv.increment(1)
+
+      // Update database
+      db.collection('canidates')
+        .doc(doc)
+        .update({ votes: increment })
+        .catch(error => console.log(error))
+
+      // Update data object
       this.canidate.votes++
     }
   }
